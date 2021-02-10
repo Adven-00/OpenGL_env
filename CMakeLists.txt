@@ -10,16 +10,13 @@ project(test)
 
 find_package(OpenGL REQUIRED)
 
-# environment
-set(OpenGL_env E:/study/Computer/project/OpenGL_env)
-
 # source file
 add_executable(${PROJECT_NAME} src/main.cpp)
 
 # header file
-# target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${OpenGL_env}/include)
-target_link_libraries(${PROJECT_NAME} ${OpenGL_env}/lib/libglfw3.a)
-target_link_libraries(${PROJECT_NAME} ${OpenGL_env}/lib/libglad.a)
+# library
+target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/lib/libglfw3.a)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/lib/libglad.a)
 target_link_libraries(${PROJECT_NAME} ${OPENGL_gl_LIBRARY})
