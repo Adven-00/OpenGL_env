@@ -1,2 +1,2 @@
 # OpenGL_env
- OpenGL environment setting with CMake
+OpenGL environment setting with CMake
